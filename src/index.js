@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
+// import { useTranslation, initReactI18next } from "react-i18next";
 
 import './index.css';
 import App from './App';
 
 i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
+  // .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     // the translations
     // (tip move them in a JSON file and import them,
