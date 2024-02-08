@@ -5,10 +5,10 @@ import 'font-awesome/css/font-awesome.min.css'; // Import FontAwesome icons
 // import {useTranslation} from "react-i18next";
 
 
-// function App() {
+function App() {
 //   const { t } = useTranslation();
 
 //   return <h2>{t('Welcome to React')}</h2>;
-// }
+}
 
-// export default App;
+export default App;
