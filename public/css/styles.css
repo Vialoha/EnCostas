@@ -607,8 +607,8 @@ progress {
 }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  max-width: 600%;
+  height: 200%;
 }
 
 .img-thumbnail {
@@ -11117,7 +11117,7 @@ body {
 }
 
 .about-section {
-  padding-top: 10rem;
+  padding-top: 0;
   background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
 }
 .about-section p {
