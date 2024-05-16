@@ -1,3 +1,9 @@
+# Encosta's do Sobral da Granja
+
+One page website developed for this company, raising awareness for their brand and initiating their presence online.
+
+/////////////////////
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

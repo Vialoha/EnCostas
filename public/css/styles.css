@@ -58,7 +58,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Cairo", "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -3823,13 +3823,39 @@ textarea.form-control-lg {
   --bs-navbar-toggler-border-radius: 0.375rem;
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
-  position: relative;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 1000;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+  background-color: black !important;
 }
+
+@media (max-width: 768px) {
+  .masthead {
+    padding-bottom: 76px; /* Additional padding for smaller screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .masthead h1, .masthead .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh; /* Set masthead height to 100% of viewport height */
+    padding: 0; /* Remove padding from the masthead */
+  }
+}
+
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-sm,
@@ -11054,7 +11080,7 @@ body {
   #mainNav.navbar-shrink .nav-link.active {
     color: #64a19d;
     outline: none;
-    border-bottom: 0.25rem solid #64a19d;
+    border-bottom: 0.25rem solid gray;
   }
 }
 
@@ -11072,20 +11098,37 @@ body {
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 5rem;
-  padding: 5rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/demo-image-01.jpg");
-  background-position: center;
+  min-height: calc(5rem + 56px);
+  padding: 5rem 0 56px;
+  padding-top:60%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0001) 30%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.9) 100%), url("../assets/img/capainicio.png");
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  z-index:1;
 }
+
+@media (min-width: 1500px) {
+  .masthead h1,
+  .masthead .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .masthead {
+    height: 100vh; /* Set masthead height to 100% of viewport height */
+    padding: 0; /* Remove padding from the masthead */
+    padding-top: 50%; /* Adjust this value if needed */
+  }
+}
+
 .masthead h1, .masthead .h1 {
   font-family: "Cormorant SC", serif;
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+  background: linear-gradient( to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
@@ -11094,31 +11137,11 @@ body {
   max-width: 20rem;
   font-size: 1rem;
 }
-@media (min-width: 768px) {
-  .masthead h1, .masthead .h1 {
-    font-size: 4rem;
-    line-height: 4rem;
-  }
-}
-@media (min-width: 992px) {
-  .masthead {
-    height: 100vh;
-    padding: 0;
-  }
-  .masthead h1, .masthead .h1 {
-    font-size: 6.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
-  }
-  .masthead h2, .masthead .h2 {
-    max-width: 30rem;
-    font-size: 1.25rem;
-  }
-}
+
 
 .about-section {
-  padding-top: 0;
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+  padding-top: 100px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 60) 10%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
 }
 .about-section p {
   margin-bottom: 5rem;
@@ -11133,7 +11156,7 @@ body {
 @media (min-width: 992px) {
   .projects-section .featured-text {
     padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #64a19d;
+    border-left: 0.5rem solid gray;
   }
 }
 .projects-section .project-text {
