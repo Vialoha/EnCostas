@@ -83,6 +83,7 @@
   --bs-highlight-bg: #faf4e0;
 }
 
+
 *,
 *::before,
 *::after {
@@ -4397,6 +4398,7 @@ textarea.form-control-lg {
 @media (min-width: 576px) {
   .card-group {
     display: flex;
+    position:center;
     flex-flow: row wrap;
   }
   .card-group > .card {
@@ -11101,7 +11103,7 @@ body {
   min-height: calc(5rem + 56px);
   padding: 5rem 0 56px;
   padding-top:60%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0001) 30%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.9) 100%), url("../assets/img/capainicio.png");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0001) 50%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.7) 100%), url("../assets/img/capainicio.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11140,8 +11142,9 @@ body {
 
 
 .about-section {
+  font-family: "Cormorant SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   padding-top: 100px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 60) 10%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 60) 10%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 100%);
 }
 .about-section p {
   margin-bottom: 5rem;
