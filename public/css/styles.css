@@ -11147,47 +11147,50 @@ body {
 
 .about-section {
   font-family: "Cormorant SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  padding-top: 100px;
+  padding-top: 50px;
   background: linear-gradient(to bottom, rgba(0, 0, 0) 0.001%, rgba(57, 56, 47) 20%, rgba(0, 0, 0) 100%);
 
 }
 
+/* nao é moda */
+
 @media (max-width: 768px) {
-  .about-section h2 {
-      font-size: 1.8rem; /* Adjust the heading size for mobile screens */
+  .naoemoda h2 {
+      font-size: 3vw; /* Adjust the heading size for mobile screens */
   }
-  .contact-section h4 {
-      font-size: 1rem; /* Adjust the heading size for mobile screens */
+  .naoemoda h4 {
+      font-size: 5.5vw; /* Adjust the heading size for mobile screens */
   }
-  .contact-section .small {
-      font-size: 1rem; /* Adjust the paragraph size for mobile screens */
+  .naoemoda p {
+      font-size: 2.7vw; /* Adjust the paragraph size for mobile screens */
   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-  .about-section h2 {
-      font-size: 2rem; /* Adjust the heading size for tablets */
+  .naoemoda h2 {
+      font-size: 2.5vw; /* Adjust the heading size for tablets */
   }
-  .contact-section h4 {
-      font-size: 1.1rem; /* Adjust the heading size for tablets */
+  .naoemoda h4 {
+      font-size: 4.5vw; /* Adjust the heading size for tablets */
   }
-  .contact-section .small {
-      font-size: 1.2rem; /* Adjust the paragraph size for tablets */
+  .naoemoda p {
+      font-size: 2.2vw; /* Adjust the paragraph size for tablets */
   }
 }
 
 @media (min-width: 992px) and (max-width: 2000px) {
-  .about-section h2 {
-      font-size: 2.2rem; /* Adjust the heading size for medium screens */
+  .naoemoda h2 {
+      font-size: 2.1vw; /* Adjust the heading size for medium screens */
   }
-  .contact-section h4 {
-      font-size: 2rem; /* Adjust the heading size for medium screens */
+  .naoemoda h4 {
+      font-size: 3.2vw; /* Adjust the heading size for medium screens */
   }
-  .contact-section .small {
-      font-size: 1.4rem; /* Adjust the paragraph size for medium screens */
+  .naoemoda p {
+      font-size: 2vw; /* Adjust the paragraph size for medium screens */
   }
 }
- 
+
+
 
 .featured-text {
   border-left: 5px solid grey; /* Default border style */
