@@ -11103,7 +11103,7 @@ body {
   min-height: calc(5rem + 56px);
   padding: 5rem 0 56px;
   padding-top:65%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0001) 50%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.7) 100%), url("../assets/img/capamarcainiciopreto.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0001) 50%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.7) 100%), url("../assets/img/marcafundopreto.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
