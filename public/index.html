@@ -1,99 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt">
   <head>
-    
+
+
+    <!-- Meta tags and link to external stylesheets -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encosta's do Sobral da Granja - Vinhos Tradicionais | Cultura e Qualidade</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/img/brasao.png" sizes="32x32" type="image/png">
+    <meta name="theme-color" content="#000000" />
+
+
+<!-- Optimized Meta Description for SEO -->
+    <meta name="description" content="Descubra os vinhos tradicionais de Encosta's do Sobral da Granja. Nossa história de tradição, cultura e qualidade. Conheça nossos produtos e nossa paixão pelo vinho." />
+    <link rel="apple-touch-icon" href="assets/brasao.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="canonical" href="https://example.com/encostas-sobral-granja" />
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Vinhos Tradicionais de Encosta's do Sobral da Granja" />
+    <meta property="og:description" content="Explore os vinhos de alta qualidade e a cultura da tradição portuguesa em Encosta's do Sobral da Granja." />
+    <meta property="og:image" content="https://encostasdossobraldagranja.com/assets/brasao.png" />
+    <meta property="og:url" content="https://encostasdossobraldagranja.com" />
+
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2TBR64MDV"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q2TBR64MDV');
+    </script> 
+
+
+
+<style>
+
+    /* Cookie Consent Popup Style */
+    .cookie-consent-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        display: none;
+        z-index: 1000;
+        font-family: Arial, sans-serif;
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .cookie-consent-content {
+      text-align: center;
+    }
+
+    .cookie-consent-text {
+      margin-bottom: 20px;
+    }
+
+    .cookie-consent-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .cookie-consent-button:hover {
+      background-color: #45a049;
+    }
+
+    /* Cookie Settings Modal Styles */
+  .cookie-settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cookie-settings-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+  }
+
+  .cookie-settings-content h3 {
+    margin-bottom: 20px;
+  }
+
+  .cookie-settings-content button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .cookie-settings-content button:hover {
+    background-color: #45a049;
+  }
+  </style>
+</head>
+
+
+
+
+
+
 <body>
 
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Encosta's do Sobral da Granja - Vinhos Tradicionais | Cultura e Qualidade</title>
-      <link rel="stylesheet" href="styles.css">
-      <style>
+    <!-- Cookie Consent Banner (Place at the top of your body) -->
+    <div id="cookieConsentBanner" class="cookie-consent-banner">
+        <p>We use cookies to improve your experience. By continuing to browse, you agree to our <a href="/cookie-policy" target="_blank">Cookie Policy</a>.</p>
+        <button id="acceptCookies" onclick="acceptCookies()">Accept All</button>
+        <button id="declineCookies" onclick="declineCookies()">Decline</button>
+    </div>
 
-        /* Cookie Consent Popup Style */
-        .cookie-consent-popup {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            display: none;
-            z-index: 1000;
-            font-family: Arial, sans-serif;
-            width: 80%;
-            max-width: 500px;
-        }
-    
-        .cookie-consent-content {
-          text-align: center;
-        }
-    
-        .cookie-consent-text {
-          margin-bottom: 20px;
-        }
-    
-        .cookie-consent-button {
-          background-color: #4CAF50;
-          color: white;
-          border: none;
-          padding: 10px 20px;
-          font-size: 16px;
-          margin: 0 10px;
-          cursor: pointer;
-          border-radius: 5px;
-        }
-    
-        .cookie-consent-button:hover {
-          background-color: #45a049;
-        }
 
-        /* Cookie Settings Modal Styles */
-      .cookie-settings-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: none;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .cookie-settings-content {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        width: 300px;
-      }
-
-      .cookie-settings-content h3 {
-        margin-bottom: 20px;
-      }
-
-      .cookie-settings-content button {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        margin: 5px;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-
-      .cookie-settings-content button:hover {
-        background-color: #45a049;
-      }
-      </style>
-    </head>
-    
-</body>
-
-    <body>
       <!-- GDPR Cookie Consent Popup -->
     <div id="cookieConsentPopup" class="cookie-consent-popup">
         <div class="cookie-consent-content">
@@ -105,44 +146,6 @@
        
         </div>
       </div>
-    
-
-
-
-
-    
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2TBR64MDV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Q2TBR64MDV');
-</script> 
-
-
-
-
-
-
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="assets/img/brasao.png" sizes="32x32" type="image/png">
-    <meta name="theme-color" content="#000000" />
-
-    <!-- Optimized Meta Description for SEO -->
-    <meta name="description" content="Descubra os vinhos tradicionais de Encosta's do Sobral da Granja. Nossa história de tradição, cultura e qualidade. Conheça nossos produtos e nossa paixão pelo vinho." />
-    <link rel="apple-touch-icon" href="assets/brasao.png" />
-    <link rel="manifest" href="manifest.json" />
-    <link rel="canonical" href="https://example.com/encostas-sobral-granja" />
-
-    <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Vinhos Tradicionais de Encosta's do Sobral da Granja" />
-    <meta property="og:description" content="Explore os vinhos de alta qualidade e a cultura da tradição portuguesa em Encosta's do Sobral da Granja." />
-    <meta property="og:image" content="https://encostasdossobraldagranja.com/assets/brasao.png" />
-    <meta property="og:url" content="https://encostasdossobraldagranja.com" />
 
 
 
@@ -217,7 +220,7 @@
       
        <!-- Masthead-->
 
-       <header class="masthead" style="font-family: Cairo, sans-serif; border-top: 100px solid">
+       <header class="masthead" style="font-family: Cairo, sans-serif">
         <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
             <div class="d-flex justify-content-center">
                 <!-- <div class="text-center">
@@ -580,80 +583,29 @@
 
 
 
-
-
-       <!-- Cookie Consent Script -->
-    <script>
-        // Get elements
-        const cookiePopup = document.getElementById('cookieConsentPopup');
-        const acceptButton = document.getElementById('acceptCookies');
-        const declineButton = document.getElementById('declineCookies');
-        const cookieSettingsButton = document.getElementById('cookieSettings');
-        const cookieSettingsModal = document.getElementById('cookieSettingsModal');
-        const saveCookieSettingsButton = document.getElementById('saveCookieSettings');
-        const cancelCookieSettingsButton = document.getElementById('cancelCookieSettings');
-        
-        const cookieAnalyticsCheckbox = document.getElementById('cookieAnalytics');
-        const cookieMarketingCheckbox = document.getElementById('cookieMarketing');
-  
-        // Check if the user has already made a choice
-        const userConsent = localStorage.getItem('cookieConsent');
-        const analyticsConsent = localStorage.getItem('analyticsConsent');
-        const marketingConsent = localStorage.getItem('marketingConsent');
-  
-        // Show cookie popup if no consent saved
-        if (!userConsent) {
-          cookiePopup.style.display = 'block';
-        }
-  
-        // If consent was already given, hide the popup
-        if (userConsent) {
-          cookiePopup.style.display = 'none';
-          if (analyticsConsent === 'accepted') {
-            // Initialize analytics cookies here (e.g., Google Analytics)
-          }
-          if (marketingConsent === 'accepted') {
-            // Initialize marketing cookies here (e.g., Facebook Pixel)
-          }
-        }
-  
-        // Accept all cookies
-        acceptButton.addEventListener('click', function () {
-          localStorage.setItem('cookieConsent', 'accepted');
-          localStorage.setItem('analyticsConsent', 'accepted');
-          localStorage.setItem('marketingConsent', 'accepted');
-          cookiePopup.style.display = 'none';
-        });
-  
-        // Decline cookies
-        declineButton.addEventListener('click', function () {
-          localStorage.setItem('cookieConsent', 'declined');
-          cookiePopup.style.display = 'none';
-        });
-  
-        // Show cookie settings modal
-        cookieSettingsButton.addEventListener('click', function () {
-          cookieSettingsModal.style.display = 'block';
-          // Pre-fill the current cookie preferences
-          cookieAnalyticsCheckbox.checked = analyticsConsent === 'accepted';
-          cookieMarketingCheckbox.checked = marketingConsent === 'accepted';
-        });
-  
-        // Save cookie settings
-        saveCookieSettingsButton.addEventListener('click', function () {
-          localStorage.setItem('cookieConsent', 'accepted');
-          localStorage.setItem('analyticsConsent', cookieAnalyticsCheckbox.checked ? 'accepted' : 'declined');
-          localStorage.setItem('marketingConsent', cookieMarketingCheckbox.checked ? 'accepted' : 'declined');
-          cookieSettingsModal.style.display = 'none';
-        });
-  
-        // Cancel cookie settings
-        cancelCookieSettingsButton.addEventListener('click', function () {
-          cookieSettingsModal.style.display = 'none';
-        });
-      </script>
-
-
+        <script>
+            function acceptCookies() {
+                document.cookie = "cookieConsent=true; path=/; max-age=31536000"; // 1 year
+                document.getElementById('cookieConsentBanner').style.display = 'none';
+                loadNonEssentialCookies();
+            }
+    
+            function declineCookies() {
+                document.cookie = "cookieConsent=false; path=/; max-age=31536000"; // 1 year
+                document.getElementById('cookieConsentBanner').style.display = 'none';
+            }
+    
+            function loadNonEssentialCookies() {
+                var script = document.createElement('script');
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-Q2TBR64MDV";
+                document.head.appendChild(script);
+            }
+    
+            // Show cookie consent if not accepted
+            if (document.cookie.indexOf('cookieConsent=true') === -1) {
+                document.getElementById('cookieConsentBanner').style.display = 'block';
+            }
+        </script>
 
 
   </body>
