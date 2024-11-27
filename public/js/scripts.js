@@ -8,6 +8,90 @@
 // 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    console.log("DOM fully loaded and parsed.");
+
+    // Check if the user has already given consent
+    if (document.cookie.indexOf('cookieConsent=true') === -1) {
+        console.log("No cookie consent found, showing the popup.");
+        // Show the cookie consent popup
+        const cookiePopup = document.getElementById('cookieConsentPopup');
+        if (cookiePopup) {
+            cookiePopup.style.display = 'block';
+        } else {
+            console.error("Popup element not found!");
+        }
+    } else {
+        console.log("Cookie consent already given, loading non-essential cookies.");
+        // If consent already given, load non-essential cookies
+        loadNonEssentialCookies();
+    }
+
+    // Add event listeners to the buttons
+    const acceptButton = document.getElementById('acceptCookies');
+    const declineButton = document.getElementById('declineCookies');
+    
+    if (acceptButton && declineButton) {
+        acceptButton.addEventListener('click', acceptCookies);
+        declineButton.addEventListener('click', declineCookies);
+    } else {
+        console.error("Button elements not found!");
+    }
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Check if the user has already given consent
+    if (document.cookie.indexOf('cookieConsent=true') === -1) {
+        // Show the cookie consent popup
+        document.getElementById('cookieConsentPopup').style.display = 'block';
+    } else {
+        // If consent already given, load non-essential cookies
+        loadNonEssentialCookies();
+    }
+
+    // Add event listeners to the buttons
+    document.getElementById('acceptCookies').addEventListener('click', acceptCookies);
+    document.getElementById('declineCookies').addEventListener('click', declineCookies);
+});
+
+// Accept cookies and store the consent in a cookie
+function acceptCookies() {
+    document.cookie = "cookieConsent=true; path=/; max-age=31536000"; // Cookie for 1 year
+    document.getElementById('cookieConsentPopup').style.display = 'none';  // Hide the popup
+    loadNonEssentialCookies();  // Load non-essential cookies (e.g., Google Analytics)
+}
+
+// Decline cookies and store the refusal in a cookie
+function declineCookies() {
+    document.cookie = "cookieConsent=false; path=/; max-age=31536000"; // Cookie for 1 year
+    document.getElementById('cookieConsentPopup').style.display = 'none';  // Hide the popup
+}
+
+// Load non-essential cookies (e.g., Google Analytics)
+function loadNonEssentialCookies() {
+    // Ensure the dataLayer is initialized before use
+    window.dataLayer = window.dataLayer || [];
+
+    // Example: Load Google Analytics script only after consent
+    var script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-Q2TBR64MDV";  // Your Google Analytics ID
+    script.onload = function() {
+        // Now that the script is loaded, set up Google Analytics
+        gtag('js', new Date());
+        gtag('config', 'G-Q2TBR64MDV');
+    };
+    document.head.appendChild(script);
+}
+
+// Function for Google Analytics tracking setup
+function gtag(){window.dataLayer.push(arguments);}
+
+
+
+
 
 window.addEventListener('DOMContentLoaded', event => {
 

@@ -127,25 +127,21 @@
 
 <body>
 
-    <!-- Cookie Consent Banner (Place at the top of your body) -->
-    <div id="cookieConsentBanner" class="cookie-consent-banner">
-        <p>We use cookies to improve your experience. By continuing to browse, you agree to our <a href="/cookie-policy" target="_blank">Cookie Policy</a>.</p>
-        <button id="acceptCookies" onclick="acceptCookies()">Accept All</button>
-        <button id="declineCookies" onclick="declineCookies()">Decline</button>
-    </div>
-
 
       <!-- GDPR Cookie Consent Popup -->
-    <div id="cookieConsentPopup" class="cookie-consent-popup">
-        <div class="cookie-consent-content">
-          <p class="cookie-consent-text">Usamos cookies para melhorar a sua experiência. Ao continuar a navegar no site, concorda com o uso de cookies para fins de análise, preferências e marketing. Pode alterar as suas preferências ou recusar cookies não essenciais.</p>
-          <button id="acceptCookies" class="cookie-consent-button">Aceitar Tudo</button>
-          <button id="declineCookies" class="cookie-consent-button">Recusar</button>
-         
+<div id="cookieConsentPopup" class="cookie-consent-popup" style="display:none;">
+    <div class="cookie-consent-content">
+        <p class="cookie-consent-text">
+            Usamos cookies para melhorar a sua experiência. Ao continuar a navegar no site, concorda com o uso de cookies para fins de análise, preferências e marketing. Pode recusar cookies não essenciais.
+        </p>
+        <button id="acceptCookies" class="cookie-consent-button">Aceitar Tudo</button>
+        <button id="declineCookies" class="cookie-consent-button">Recusar</button>
         <!-- Add this paragraph for Cookie and Privacy Policy links -->
-       
-        </div>
-      </div>
+        <p></p>
+        <p><a href="/cookie-policy" target="_blank">Política de Cookies</a> | <a href="/privacy-policy" target="_blank">Política de Privacidade</a></p>
+    </div>
+</div>
+
 
 
 
@@ -584,28 +580,82 @@
 
 
         <script>
+            // Wait for the DOM to fully load before executing any script
+            document.addEventListener('DOMContentLoaded', function () {
+                // Check if the user has already given consent
+                if (document.cookie.indexOf('cookieConsent=true') === -1) {
+                    console.log("No cookie consent found, showing the banner.");
+                    document.getElementById('cookieConsentBanner').style.display = 'block';
+                } else {
+                    console.log("Cookie consent already given.");
+                    loadNonEssentialCookies(); // If consent is already given, load non-essential cookies
+                }
+        
+                // Attach event listeners to the accept and decline buttons
+                const acceptButton = document.getElementById('acceptCookies');
+                const declineButton = document.getElementById('declineCookies');
+                
+                if (acceptButton && declineButton) {
+                    acceptButton.addEventListener('click', acceptCookies);
+                    declineButton.addEventListener('click', declineCookies);
+                } else {
+                    console.error("Accept or Decline buttons not found!");
+                }
+            });
+        
+            // Function to handle cookie consent acceptance
             function acceptCookies() {
-                document.cookie = "cookieConsent=true; path=/; max-age=31536000"; // 1 year
-                document.getElementById('cookieConsentBanner').style.display = 'none';
+                // Set cookie consent to true
+                document.cookie = "cookieConsent=true; path=/; max-age=31536000"; // Cookie for 1 year
+                console.log("User accepted cookies.");
+                
+                // Hide the cookie consent banner
+                const cookieBanner = document.getElementById('cookieConsentBanner');
+                if (cookieBanner) {
+                    cookieBanner.style.display = 'none';
+                } else {
+                    console.error("Cookie consent banner not found.");
+                }
+        
+                // Load non-essential cookies
                 loadNonEssentialCookies();
             }
-    
+        
+            // Function to handle cookie consent refusal
             function declineCookies() {
-                document.cookie = "cookieConsent=false; path=/; max-age=31536000"; // 1 year
-                document.getElementById('cookieConsentBanner').style.display = 'none';
+                // Set cookie consent to false
+                document.cookie = "cookieConsent=false; path=/; max-age=31536000"; // Cookie for 1 year
+                console.log("User declined cookies.");
+                
+                // Hide the cookie consent banner
+                const cookieBanner = document.getElementById('cookieConsentBanner');
+                if (cookieBanner) {
+                    cookieBanner.style.display = 'none';
+                } else {
+                    console.error("Cookie consent banner not found.");
+                }
             }
-    
+        
+            // Function to load non-essential cookies (e.g., Google Analytics)
             function loadNonEssentialCookies() {
+                // Create and append the Google Analytics script only after consent is granted
                 var script = document.createElement('script');
-                script.src = "https://www.googletagmanager.com/gtag/js?id=G-Q2TBR64MDV";
+                script.src = "https://www.googletagmanager.com/gtag/js?id=G-Q2TBR64MDV"; // Your Google Analytics ID
+                script.onload = function () {
+                    // Initialize Google Analytics once the script is loaded
+                    gtag('js', new Date());
+                    gtag('config', 'G-Q2TBR64MDV');
+                };
                 document.head.appendChild(script);
             }
-    
-            // Show cookie consent if not accepted
-            if (document.cookie.indexOf('cookieConsent=true') === -1) {
-                document.getElementById('cookieConsentBanner').style.display = 'block';
+        
+            // Function for Google Analytics tracking setup (this pushes tracking data to dataLayer)
+            function gtag() {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push(arguments);
             }
         </script>
+        
 
 
   </body>
