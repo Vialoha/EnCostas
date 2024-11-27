@@ -128,7 +128,7 @@
 <body>
 
 
-      <!-- GDPR Cookie Consent Popup -->
+   <!-- GDPR Cookie Consent Popup -->
 <div id="cookieConsentBanner" class="cookie-consent-popup" style="display:none;">
     <div class="cookie-consent-content">
         <p class="cookie-consent-text">
@@ -136,11 +136,94 @@
         </p>
         <button id="acceptCookies" class="cookie-consent-button">Aceitar Tudo</button>
         <button id="declineCookies" class="cookie-consent-button">Recusar</button>
-        <!-- Add this paragraph for Cookie and Privacy Policy links -->
-        <p></p>
         <p><a href="/cookie-policy" target="_blank">Política de Cookies</a> | <a href="/privacy-policy" target="_blank">Política de Privacidade</a></p>
     </div>
 </div>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check if the user has already given consent
+        if (document.cookie.indexOf('cookieConsent=true') === -1) {
+            console.log("No cookie consent found, showing the banner.");
+            document.getElementById('cookieConsentBanner').style.display = 'block';
+        } else {
+            console.log("Cookie consent already given.");
+            loadNonEssentialCookies(); // If consent is already given, load non-essential cookies
+        }
+
+        // Attach event listeners to the accept and decline buttons
+        const acceptButton = document.getElementById('acceptCookies');
+        const declineButton = document.getElementById('declineCookies');
+        
+        if (acceptButton && declineButton) {
+            acceptButton.addEventListener('click', acceptCookies);
+            declineButton.addEventListener('click', declineCookies);
+        } else {
+            console.error("Accept or Decline buttons not found!");
+        }
+    });
+
+    // Function to handle cookie consent acceptance
+    function acceptCookies() {
+        // Set cookie consent to true
+        document.cookie = "cookieConsent=true; path=/; max-age=31536000"; // Cookie for 1 year
+        console.log("User accepted cookies.");
+        
+        // Hide the cookie consent banner
+        const cookieBanner = document.getElementById('cookieConsentBanner');
+        if (cookieBanner) {
+            cookieBanner.style.display = 'none';
+        } else {
+            console.error("Cookie consent banner not found.");
+        }
+
+        // Load non-essential cookies (Google Analytics)
+        loadNonEssentialCookies();
+    }
+
+    // Function to handle cookie consent refusal
+    function declineCookies() {
+        // Set cookie consent to false
+        document.cookie = "cookieConsent=false; path=/; max-age=31536000"; // Cookie for 1 year
+        console.log("User declined cookies.");
+        
+        // Hide the cookie consent banner
+        const cookieBanner = document.getElementById('cookieConsentBanner');
+        if (cookieBanner) {
+            cookieBanner.style.display = 'none';
+        } else {
+            console.error("Cookie consent banner not found.");
+        }
+    }
+
+    // Function to load non-essential cookies (e.g., Google Analytics) only after consent
+    function loadNonEssentialCookies() {
+        if (document.cookie.indexOf('cookieConsent=true') !== -1) {
+            console.log("Loading non-essential cookies...");
+
+            // Create and append the Google Analytics script only after consent is granted
+            var script = document.createElement('script');
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-Q2TBR64MDV"; // Your Google Analytics ID
+            script.onload = function () {
+                // Initialize Google Analytics once the script is loaded
+                gtag('js', new Date());
+                gtag('config', 'G-Q2TBR64MDV');
+            };
+            document.head.appendChild(script);
+        } else {
+            console.log("Non-essential cookies not loaded (user declined).");
+        }
+    }
+
+    // Function for Google Analytics tracking setup (this pushes tracking data to dataLayer)
+    function gtag() {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(arguments);
+    }
+</script>
+
 
 
 

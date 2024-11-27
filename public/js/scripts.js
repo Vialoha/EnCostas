@@ -8,37 +8,6 @@
 // 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOM fully loaded and parsed.");
-
-    // Check if the user has already given consent
-    if (document.cookie.indexOf('cookieConsent=true') === -1) {
-        console.log("No cookie consent found, showing the popup.");
-        // Show the cookie consent popup
-        const cookiePopup = document.getElementById('cookieConsentPopup');
-        if (cookiePopup) {
-            cookiePopup.style.display = 'block';
-        } else {
-            console.error("Popup element not found!");
-        }
-    } else {
-        console.log("Cookie consent already given, loading non-essential cookies.");
-        // If consent already given, load non-essential cookies
-        loadNonEssentialCookies();
-    }
-
-    // Add event listeners to the buttons
-    const acceptButton = document.getElementById('acceptCookies');
-    const declineButton = document.getElementById('declineCookies');
-    
-    if (acceptButton && declineButton) {
-        acceptButton.addEventListener('click', acceptCookies);
-        declineButton.addEventListener('click', declineCookies);
-    } else {
-        console.error("Button elements not found!");
-    }
-});
-
 
 
 
@@ -88,6 +57,8 @@ function loadNonEssentialCookies() {
 
 // Function for Google Analytics tracking setup
 function gtag(){window.dataLayer.push(arguments);}
+
+
 
 
 
