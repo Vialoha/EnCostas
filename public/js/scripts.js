@@ -10,7 +10,6 @@
 
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
     // Check if the user has already given consent
     if (document.cookie.indexOf('cookieConsent=true') === -1) {

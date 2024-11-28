@@ -143,6 +143,10 @@
 
 
 <script>
+
+document.cookie = "nome=valor; max-age=3600; path=/; secure; HttpOnly; SameSite=Strict";
+
+
     document.addEventListener('DOMContentLoaded', function () {
         // Check if the user has already given consent
         if (document.cookie.indexOf('cookieConsent=true') === -1) {
