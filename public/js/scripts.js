@@ -11,6 +11,16 @@
 // script.js
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const agePopup = document.getElementById('age-popup');
+    
+    // Adiciona um pequeno atraso para garantir que o CSS seja carregado corretamente
+    setTimeout(() => {
+      agePopup.style.display = 'flex';  // Torna o popup visível
+      agePopup.style.opacity = '1';     // Torna o popup opaco (visível)
+    }, 200); // Um pequeno atraso (100ms) para garantir que o layout seja calculado
+  });
+
 
 
 
