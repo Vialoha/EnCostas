@@ -8,6 +8,26 @@
 // 
 
 
+// script.js
+window.onload = function () {
+    // Show the popup on page load
+    document.getElementById('age-popup').style.display = 'flex';
+  };
+  
+  function verifyAge(isOldEnough) {
+    if (isOldEnough) {
+      // Allow access and hide the popup
+      document.getElementById('age-popup').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    } else {
+      // Block access (you could redirect to another page or close the window)
+      alert('You must be 18 or older to access this site.');
+      window.location.href = 'https://www.google.com'; // Redirecting to another website
+    }
+  }
+  
+
+
 
 
 document.addEventListener('DOMContentLoaded', function () {

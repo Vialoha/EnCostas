@@ -36,7 +36,19 @@
     </script>  -->
 
 
+    <!-- Age Verification Popup -->
+  <div id="age-popup" class="popup">
+    <div class="popup-content">
+      <h2>Are you 18 years or older?</h2>
+      <button id="age-verify-yes" onclick="verifyAge(true)">Yes</button>
+      <button id="age-verify-no" onclick="verifyAge(false)">No</button>
+    </div>
+  </div>
 
+
+  <div id="main-content" style="display:none;">
+    <!-- Website content here -->
+  
 <style>
 
     /* Cookie Consent Popup Style */
@@ -126,6 +138,7 @@
 
 
 <body>
+
 
 
    <!-- GDPR Cookie Consent Popup -->
@@ -743,7 +756,7 @@ document.cookie = "nome=valor; max-age=3600; path=/; secure; HttpOnly; SameSite=
             }
         </script>
         
-
+    </div>
 
   </body>
 </html>
