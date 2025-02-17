@@ -36,19 +36,9 @@
     </script>  -->
 
 
-    <!-- Age Verification Popup -->
-  <div id="age-popup" class="popup">
-    <div class="popup-content">
-      <h2>Are you 18 years or older?</h2>
-      <button id="age-verify-yes" onclick="verifyAge(true)">Yes</button>
-      <button id="age-verify-no" onclick="verifyAge(false)">No</button>
-    </div>
-  </div>
 
 
-  <div id="main-content" style="display:none;">
-    <!-- Website content here -->
-  
+
 <style>
 
     /* Cookie Consent Popup Style */
@@ -140,6 +130,52 @@
 <body>
 
 
+
+    <!-- Age Verification Popup -->
+  <div id="age-popup" class="popup">
+    <div class="popup-content">
+        <img src="assets/img/capainiciosite.png" style="width: 300px; height:auto;">
+      <h2 style="font-size: 20px; font-family: Cairo;">Tem mais do que 18 anos?</h2>
+      <button id="age-verify-yes" onclick="verifyAge(true)" style="border-radius:20px; margin-right:20px; font-family: Cairo;">Sim</button>
+      <button id="age-verify-no" onclick="verifyAge(false)" style="border-radius:20px; font-family: Cairo;">Não</button>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Show the age verification popup
+      document.getElementById('age-popup').style.display = 'flex';
+      
+      // Event listeners for the buttons
+      const yesButton = document.getElementById('age-verify-yes');
+      const noButton = document.getElementById('age-verify-no');
+      
+      yesButton.addEventListener('click', function() {
+        verifyAge(true);
+      });
+
+      noButton.addEventListener('click', function() {
+        verifyAge(false);
+      });
+    });
+
+    function verifyAge(isOldEnough) {
+      if (isOldEnough) {
+        // Hide the popup and show the main content
+        document.getElementById('age-popup').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      } else {
+        // Redirect if underage
+        alert('You must be 18 or older to access this site.');
+        window.location.href = 'https://www.google.com'; // Redirect to another site
+      }
+    }
+  </script>
+
+<div id="main-content" style="display:none;">
 
    <!-- GDPR Cookie Consent Popup -->
 <div id="cookieConsentBanner" class="cookie-consent-popup" style="display:none;">
