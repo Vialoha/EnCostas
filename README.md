@@ -4,8 +4,8 @@ One page website developed for this company, raising awareness for their brand a
 
 ## Authors
 
-@Vialoha - Full Stack Developer
-Carolina - Frontend Advisor
+@Vialoha - Full Stack Developer |
+Carolina - Frontend Advisor |
 Marisa - Photos and Video Footage
 
 ## Backlog Functionalities
@@ -24,6 +24,8 @@ Bootstrap
 ## Project Structure
 
 index.html
+cookies-policy.html
+privacy-policy.html
 styles.css
 scripts.js
 
